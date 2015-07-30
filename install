@@ -1,0 +1,4 @@
+#!/bin/bash
+/show/description "Installing growl client"
+/system/install python-pip
+pip install gntp

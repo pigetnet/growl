@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ $# -eq 4 ];then
+	python /opt/piget/growl/python/growl.py "$1" "$2" "$3" "$4"
+else
+	/show/errorBox "Wrong Arguments"
+	/show/usage "/do/growl/send hostname password title description"
+	/show/example '/do/growl/send "192.168.0.1" "batteryStaple" "Test" "hello world"'
+fi

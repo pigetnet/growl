@@ -1,5 +1,0 @@
-#!/bin/bash
-description "Installing growl client python libraries"
-installer python-pip
-messagebox "Install gntp globally"
-pip install gntp
