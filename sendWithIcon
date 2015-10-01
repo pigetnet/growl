@@ -1,0 +1,14 @@
+#!/bin/bash
+if [ $# -eq 5 ];then
+hostname="$1"
+password="$2"
+title="$3"
+description="$4"
+image="$5"
+        python /opt/piget/growl/python/growlIcon.py "$hostname" "$password" "$title" "$description" "$image"
+else
+        /show/errorBox "Wrong Arguments"
+        /show/usage "/do/growl/sendWithIcon hostname password title description image"
+        /show/example '/do/growl/sendWithIcon "192.168.0.1" "batteryStaple" "Test" "hello world" "/tmp/image.jpg"'
+fi
+

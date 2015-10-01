@@ -3,6 +3,7 @@
 import logging
 import gntp.notifier
 import sys
+import socket
 logging.basicConfig(level=logging.INFO)
 
 if len(sys.argv) > 3:
@@ -10,9 +11,10 @@ if len(sys.argv) > 3:
     password = sys.argv[2]
     title = sys.argv[3]
     description = sys.argv[4]
+    icon = sys.argv[5]
 
     growl = gntp.notifier.GrowlNotifier(
-        applicationName=sys.argv[2],
+	applicationName=socket.gethostname(),
         notifications=["New Updates", "New Messages"],
         defaultNotifications=["New Messages"],
         hostname=hostname,  # Here enter your IP address
@@ -20,17 +22,17 @@ if len(sys.argv) > 3:
     )
     growl.register()
     # Send one message
-    # image = open('/var/www/tmp/image.jpg', 'rb').read()
+    image = open(icon, 'rb').read()
     growl.notify(
         noteType="New Messages",
         title=title,
         description=description,
-        # icon = image, #you can optionally define an image icon to appear with the notification
+        icon = image, #you can optionally define an image icon to appear with the notification
         sticky=True,
         priority=1,
     )
 else:
     print "You didn't provide enough argument"
-    print "-----------------------------------------------"
-    print "Usage: growl.py IP PASSWORD Title Description"
-    print "-----------------------------------------------"
+    print "----------------------------------------------------------"
+    print "Usage: growlIcon.py IP PASSWORD Title Description IconFile"
+    print "----------------------------------------------------------"

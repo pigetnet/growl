@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ $# -eq 1 ];then
+	hostname=$("/show/myip")
+	password="$1"
+	python /opt/piget/growl/python/growlNoIcon.py "$hostname" "$password" "TEST" "THIS IS A TEST"
+else
+	echo "please add password"
+fi

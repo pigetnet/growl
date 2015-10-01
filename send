@@ -1,8 +1,13 @@
 #!/bin/bash
 if [ $# -eq 4 ];then
-	python /opt/piget/growl/python/growl.py "$1" "$2" "$3" "$4"
+hostname="$1"
+password="$2"
+title="$3"
+description="$4"
+        python /opt/piget/growl/python/growlNoIcon.py "$hostname" "$password" "$title" "$description"
 else
-	/show/errorBox "Wrong Arguments"
-	/show/usage "/do/growl/send hostname password title description"
-	/show/example '/do/growl/send "192.168.0.1" "batteryStaple" "Test" "hello world"'
+        /show/errorBox "Wrong Arguments"
+        /show/usage "/do/growl/send hostname password title description"
+        /show/example '/do/growl/send "192.168.0.1" "batteryStaple" "Test" "hello world"'
 fi
+
