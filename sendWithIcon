@@ -5,6 +5,7 @@ password="$2"
 title="$3"
 description="$4"
 image="$5"
+/do/growl/resizeIcon $5
         python /opt/piget/growl/python/growlIcon.py "$hostname" "$password" "$title" "$description" "$image"
 else
         /show/errorBox "Wrong Arguments"

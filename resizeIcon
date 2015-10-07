@@ -1,0 +1,3 @@
+#!/bin/bash
+/show/listecho "Resize image to growl icon (128x128)"
+convert $1 -resize 128x128 $1
