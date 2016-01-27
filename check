@@ -4,5 +4,5 @@ if [ $# -eq 1 ];then
 	password="$1"
 	python /opt/piget/growl/python/growlNoIcon.py "$hostname" "$password" "TEST" "THIS IS A TEST"
 else
-	echo "please add password"
+	echo "/do/growlcheck password"
 fi
