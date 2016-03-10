@@ -1,4 +1,6 @@
 #!/bin/bash
 /show/description "Installing growl client"
 /system/install python-pip
+#Need for icon auto resize
+/system/install imagemagick
 pip install gntp
